@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+# here we r giving the name to identify the kind.(In `kind` i m mentioning pod so it refers to pod name)
+  name: nginxpod 
+spec:
+ containers:
+ # here name refers to containers name
+   - name: firstcon
+     image: nginx:1.25
