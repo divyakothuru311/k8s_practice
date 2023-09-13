@@ -10,7 +10,6 @@ spec:
      ports:
        - containerPort: 80
          protocol: TCP
- containers:
  # we can run `n` number of containers in single pod.containers in a pod share the same network interface, thus containers in the same pod cannot be exposed on the same port.
    - name: secondcon
      image: jenkins/jenkins
