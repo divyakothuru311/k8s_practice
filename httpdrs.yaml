@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: httpdrs
+  labels:
+    app: httpd
+    env: qa
+spec:
+  minReadySeconds: 2
+  replicas: 3
+  selector:
+    matchLabels:
+      app: httpd
+      env: dev
+  template:
+    metadata:
+      name: httpdpod
+      namespace: my-workspace
+      labels:
+        app: httpd
+        env: dev
+    spec:
+      containers:
+        - image: httpd:2.4
+          name: httpdcon
+          ports:
+            - containerPort: 80
+              protocol: TCP
