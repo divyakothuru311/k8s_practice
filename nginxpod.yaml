@@ -9,3 +9,6 @@ spec:
  # here name refers to containers name
    - name: firstcon
      image: nginx:1.25
+     ports:
+       - containerPort: 80
+         protocol: TCP

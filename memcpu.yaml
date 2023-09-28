@@ -1,0 +1,25 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+ name: memorydemo
+ labels:
+   name: mem-demo
+spec:
+ containers:
+   - name: mem-demo-ctr
+     image: jenkins/jenkins
+     resources:
+      limits:
+        cpu: "1"
+      requests:
+        cpu: "0.5"
+     resources:
+      requests:
+       memory: "256Mi"
+      limits:
+        memory: "500Mi"
+    ports:
+       - containerPort: 8080
+         protocol: TCP
+   

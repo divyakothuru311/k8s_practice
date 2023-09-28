@@ -9,12 +9,14 @@ spec:
      image: nginx:1.25
      ports:
        - containerPort: 80
+         hostPort: 80(to expose from node)
          protocol: TCP
  # we can run `n` number of containers in single pod.containers in a pod share the same network interface, thus containers in the same pod cannot be exposed on the same port.
    - name: secondcon
      image: jenkins/jenkins
      ports:
        - containerPort: 8080
+         hostPort: 8080(to expose from node)
          protocol: TCP
  
 

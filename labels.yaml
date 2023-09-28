@@ -11,6 +11,7 @@ spec:
  containers:
    - name: jenkinscontainer
      image: jenkins/jenkins
-     ports:
+     ports: 
        - containerPort: 8080
-         protocol: TCP
+         hostPort: 8080
+         protocol: TCP 

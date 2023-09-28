@@ -1,0 +1,31 @@
+apiVerion: apps/v1
+kind: Deployment
+metadata:
+  name: nop-deploy
+  labels:
+    app: nop
+spec:
+  minReadySeconds: 2
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nop1
+  template:
+    metadata:
+      name: noppod
+      labels:
+        app: nop1
+    spec:
+      containers:
+        - name: nopc
+          image: divyak123/spring:nop
+          resources:
+            limits:
+              memory: "1024Mi"
+              cpu: "1000m"
+            requests:
+              memory: "512Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 5000
+              protocol: TCP

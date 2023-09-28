@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nop-svc
+  labels:
+    app: nopapp
+spec:
+  type: ClusterIP
+  selector:
+    app: nop1
+  ports:
+    - targetPort: 5000
+      nodePort: 32000
+      port: 5000

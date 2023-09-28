@@ -1,0 +1,49 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+ name: nginxpod
+ labels:
+   name: pod1
+   env: dev
+spec:
+ containers:
+   - name: nginxcontainer1
+     image: nginx:1.25
+     ports:
+       - containerPort: 80
+         protocol: TCP
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+ name: nginxpod
+ labels:
+   name: pod2
+   env: qa
+spec:
+ containers:
+   - name: nginxcontainer2
+     image: nginx:1.25
+     ports:
+       - containerPort: 80
+         protocol: TCP
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+ name: nginxpod
+ labels:
+   name: pod3
+   dev: uat
+spec:
+ containers:
+   - nmae: nginxcontainer3
+     image: nginx:1.25
+     ports:
+       - containerPort: 80
+         protocol: TCP
+
+
